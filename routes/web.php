@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('/layouts/layout');
-});
+Route::get('/contact', function(){
+    return view('contact');
+
+})->name('contact');
+
+
+
+//rotta home
+Route::get('/', function() {
+    return view('home');
+})->name('home');

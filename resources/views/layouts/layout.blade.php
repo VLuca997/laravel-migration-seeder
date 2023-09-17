@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TITOLO</title>
+    <title>@yield('page-title')</title>
     @vite('resources/js/app.js')
 </head>
 <body>
-    <h1>ciao</h1>
+    <header>
+        @include('partials.headernav')
+    </header>
+
+    <main><!--MAIN CONTENT-->
+        <div class="container">
+            {{-- home.blade.php --}}
+            @yield('main-content')
+        
+
+        </div>
+    </main>
+
 </body>
 </html>
