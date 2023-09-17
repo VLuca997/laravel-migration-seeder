@@ -26,7 +26,7 @@ class TrainsTableSeeder extends Seeder
                 $train->arr_station =  fake()->city();
                 $train->dep_timestamp = fake()->dateTimeBetween('tomorrow', '+1 week');
                 $train->arr_timestamp = fake()->dateTimeBetween('+1 week', '+5 weeks');
-                $train->code = rand(1,99);
+                $train->code = strtoupper(fake()->shuffle(fake()->bothify('?#?#?#')));
                 $train->train_cars_number = rand(2,12);
                 $train->in_time = fake()->boolean();
                 $train->deleted = fake()->boolean();
@@ -34,18 +34,5 @@ class TrainsTableSeeder extends Seeder
         
         }
 
-        // for($i = 0; $i > 10; $i++){
-        //     $train = new Train();
-        //     $train->company = fake()->company();
-        //     $train->dep_station = fake()->city();
-        //     $train->arr_station =  fake()->city();
-        //     $train->dep_timestamp = fake()->dateTimeBetween('tomorrow', '+1 week');
-        //     $train->arr_timestamp = fake()->dateTimeBetween('+1 week', '+5 weeks');
-        //     $train->code = fake()->shuffle(fake()->bothify('?#?#?#'));
-        //     $train->train_cars_number = rand(2,12);
-        //     $train->in_time = fake()->boolean();
-        //     $train->deleted = fake()->boolean();
-        //     $train->save();//salva
-        // }
     }
 }

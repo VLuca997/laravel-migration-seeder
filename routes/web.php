@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/contact', function(){
-    return view('contact');
+    $trains = \App\Models\Train::all();
+    return view('contact',compact('trains'));
 
 })->name('contact');
 
@@ -22,5 +23,6 @@ Route::get('/contact', function(){
 
 //rotta home
 Route::get('/', function() {
-    return view('home');
+    $trains = \App\Models\Train::all();
+    return view('home', compact('trains'));
 })->name('home');
